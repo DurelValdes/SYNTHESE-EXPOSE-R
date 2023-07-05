@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: 44ce1a65-ae3e-4337-b5d4-21c248782efa
+      url: 'https://axel.quarto.pub/expose-de-r'

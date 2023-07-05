@@ -1,0 +1,19 @@
+---
+title: "Rshiny"
+---
+
+## Introduction
+
+Nous sommes souvent amenés à faire des statistiques sur des variables d'une base donnée et le plus souvent nous écrivons des codes pour chaque action que nous voulons faire sur notre base de données en l'occurence, le tri à plat d'une variable, croisement des variables ou encore des modèles suivant des variables. Cette tache est vraiment répétitive si nous avons plusieurs variables dont on veut réaliser les memes actions. Ou encore, il se peut qu'on veuille suivre juste la distribution d'une variable par rapport à une autre mais qu'on on souhaite pas faire apparaittre dans notre rapport ou document finale. Pour rémédier à cela, R Shiny nous offre la possibilité de créer une application web interactive qui facilite les analyses de sorte qu'on a nos variables et nos différents modèles déjà programmés et on aura qu'à choisir les variables nous même au lieu d'écrire le code à chaque fois.
+
+## Présentation de Shiny
+
+Shiny est un package R développé par RStudio qui permet de créer des applications web interactives. Avec Shiny, vous pouvez construire des interfaces utilisateur dynamiques sans avoir besoin de connaissances approfondies en HTML, CSS ou JavaScript. Shiny suit un modèle ui-serveur, où le serveur exécute le code R pour générer les sorties dynamiques, tandis que l'interface utilisateur (navigateur web) affiche l'interface et permet aux utilisateurs d'interagir avec l'application. Shiny facilite la création d'applications web pour l'analyse de données, l'affichage de graphiques, l'exécution de modèles statistiques, etc., le tout directement depuis R.
+
+## Les différentes parties d'une application Shiny
+
+Une apllication Shiny comporte essentiellement deux parties :
+
+-   `L' ui` (interface utilisateur) : cette partie comprend tout ce qu'on voit sur l'application. C'est elle qui gère le visuel et ce qui nous captive sur l'application. Si l'on devait assimiler une application Shiny à l'homme cette partie est juste l'apparence physique.
+
+-   `Le server` (serveur) : c'est elle le cerveau qui gère tous les calculs derrière et nous renvoie les résulats qu'on voit sur l'application.

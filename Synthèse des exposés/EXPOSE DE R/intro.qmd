@@ -1,0 +1,27 @@
+# Introduction
+
+Dans le cadre de notre module de R de 20h, cours qui nous a été dispensé par M. Aboubacar HEMA, Research Analyst à IFPRI, nous avons été à faire des exposés en vue d'enrichir le cours. Ces exposés portent sur les thèmes suivants:
+
+-   Package Janitor
+
+-   Package GtSummary
+
+-   Rmarkdown
+
+-   RQuarto
+
+-   R vers Excel
+
+-   Text Mining avec R
+
+-   Système d'équation
+
+-   Calcul parallèle
+
+-   Python sur R (package Reticulate)
+
+-   Cartographie avec R
+
+-   RShiny
+
+Dans notre présent livre, nous vous présenterons brièvement les différents points abordés lors de ces présentations.

@@ -1,0 +1,41 @@
+# Rmarkdown
+
+## Introduction
+
+Rmarkdown est un format de fichier qui permet de créer des documents avec R. En écrivant un rapport dont nous sortons les tableaux, graphiques ou autres sur R, nous n'avons plus besoin d'aller sur Word après pour coller ses graphiques et continuer nos analyses. La perte de temps issu de ce va-et-vient entre Word et R est désormais résolu grâce à Rmarkdown qui nous offre la possibilité d'écrire directement notre rapport ou document et le sortir après sous format HTML, Word ou PDF. Cependant il nous permet également de créer des présentations sous format PDF (Beamer) ou encore PowerPoint.
+
+## Préliminaire
+
+Avant toute chose il faudra installer le package `Rmarkdown`. Cependant, on peut utiliser un créer un document Rmarkdown même sans avoir installé ce package.
+
+## Création d'un document
+
+On peut soit créer un projet ou encore un fichier. S'agissant d'un projet, voici les étapes:
+
+![](images/Capture%20web_26-6-2023_224022_.jpeg){fig-align="center"}
+
+Quant au fichier Markdown il faudra cliquer l'onglet `File` ensuite `New file` et enfin `Rmarkdown`. Après selon qu"on veuille un document ou une présentation, on choisit `Document` ou `Presentation`. Pour finir, il faudra préciser le format de sortie, le titre du document et le(s) auteur(s).
+
+## Présentation du Markdown
+
+Le document Markdown comprend 3 parties que sont l'en-tête (YAML), le texte et les blocs de codes tous deux formant le corps du document. Dans l'en-tete sont précisés des formats additionnels pour le document (Table de matières, références s'il y en a, des packages Latex à inclure si possible).
+
+Concernant le corps du devoir, quelques astcuces sont en mentionnées:
+
+1.  Pour insérer un nouveau titre, nous utilisons "\#", entre l'élément que nous voulons en titre, par exemple: "\#" Titre 1 "\##" Titre 2 "\###" Titre 3
+
+2.  Pour forcer le retour à la ligne, il faut mettre "deux espaces vides à la fin d'une ligne;
+
+3.  Pour écrire en gras il faut mettre deux étoiles (ou deus tirets de 8) entre le mot souhaité;
+
+4.  Pour mettre un texte en italique, on le met entre deux tirets de huit (2 étoiles);
+
+5.  Pour mettre en gras et en italique,on le met enre 3 étoiles (ou 3 tirets de 8);
+
+6.  Pour barer un texte, précédé le de 2 tildes et refermez la chaine avec 2 tildes;
+
+7.  Pour mettre un mot en exposant,encadez le du symbole "ˆ";
+
+8.  Pour l'obtention d'un tiret long (respectuvement moyen) ,alignez 3 tirets de 6 successifs (respectivement 2 tirets de 6 successifs)
+
+Il est aussi possible d'insérer des images, tableaux et autres. Cependant l'usage de tout cela nécessite la connaissance des codes de chaque élément à mettre. Pour simplifier alors tout cela et rendre la création de document sur R facile à tous et surtout ceux qui n'aiment pas coder, Quarto a été developpé avec une interface semblable à celle de Word. C'est ce que nous verrons au chapitre suivant.

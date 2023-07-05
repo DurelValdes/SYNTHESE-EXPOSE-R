@@ -1,0 +1,41 @@
+# Janitor
+
+## Description du package
+
+Le package Janitor est un ensemble de fonctions qui permettent d'améliorer la manipulation et le formatage des données dans les data.frames. Certaines des principales fonctions du package Janitor sont:
+
+1.  Formater les noms de colonnes : Il permet de formater correctement les noms des colonnes dans un data.frame pour les rendre plus lisibles et cohérents.
+
+2.  Comptages rapides des combinaisons de variables : Il fournit des fonctionnalités pour effectuer rapidement des comptages des combinaisons de variables dans un data.frame, ce qui permet d'obtenir les fréquences de chaque combinaison.
+
+3.  Recherche des enregistrements en double : Il permet de détecter les enregistrements en double dans un data.frame, c'est-à-dire les lignes qui ont les mêmes valeurs pour toutes les variables.
+
+4.  Formatage des résultats de tabulation : Le package Janitor fournit également des fonctions pour formater joliment les résultats de la tabulation, ce qui facilite leur lecture et leur interprétation.
+
+En résumé, le package Janitor facilite le nettoyage, la mise en forme et l'exploration des données dans R. Il offre des fonctionnalités similaires à celles de SPSS et Microsoft Excel, et il est conçu pour être convivial et facile à utiliser, en suivant les principes du "pipe" (%\>%) pour faciliter les opérations en chaîne.
+
+Il joue essentiellment deux fonctions: **le nettoyage des données** et **la visualisation des données en tableaux.**
+
+## Quelques fonctions de nettoyage
+
+Plusieurs fonctions permettent de rendre propre la base. En voici quelques unes:
+
+-   *clean_names()*: elle permet de nettoyer les noms des variables. En ce sens, quand il y a des espaces entre les noms de colonnes il les remplace par des \_, quand deux colonnes ont même nom il remplace le deuxème par même nom_2. Il gère aussi la casse en mettant tous les noms sous le même format.
+
+-   *Compare_df_cols()* : compare les colonnes sur quelques bases, ls classes des éléments des colonnes
+
+-   *Make_clean_names()* : permet de nettoyer les noms de variables par des séries de transformation
+
+-   *Remove_constant()* : Permet de supprimer une colonne qui a que des valeurs constantes
+
+-   *Get_dupes()* : Permet de repérer des lignes qui se répètent avec leur identifiant
+
+## Quelques fonction de tableaux
+
+-   *adorn_totals()*; ajoute une colonne de totaux à un dataframe.
+
+-   *adorn_percentage(*): transforme un dataframe d'effectifs en pourcentage
+
+## Quelques limites du package
+
+Le package `Janitor` n'est pas un package tout fait pour les tableaux ou un package qui peut tout seul réaliser ses taches. Il a besoin d'autres fonctions pour ses taches. Aussi, il n'offre pas pour ses tableaux, la possibilités de combiner plusieurs variables.

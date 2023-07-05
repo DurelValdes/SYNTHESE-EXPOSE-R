@@ -1,0 +1,50 @@
+---
+title: Cartographie avec R
+---
+
+## Introduction
+
+La cartographie est un domaine essentiel qui offre une vue plus facile et compréhensible de certains phénomènes que les graphiques et tableaux ne peuvent bien exprimer.R offre plusieurs packages et fonctionnalités pour la cartographie, ce qui en fait un outil puissant pour l'exploration, l'analyse et la représentation visuelle des données spatiales.
+
+## Principaux packages
+
+-   `Cartography`, réaliser des cartes
+-   `ClassInt`, discrétisation de variables quantitatives
+-   `ggspatial`, syntaxe complémentaires à la ggplot
+-   `GISTools`, outils pour faire de la carto
+-   `leaflet`, interractivité avec JavaScript
+-   `maptools`, manipulation de données spatial,
+-   `popcircle`, représentation style bubble plot
+-   `raster`, manipulation de données raster
+-   `RColorBrewe`r, palette de couleurs pour carto
+-   `rgdal`, import de données spatiales
+-   `sf`, nouvelle classe d'objets spatials
+-   `sp`, ancienne classe d'objets spatials
+-   `tidyverse,  ggplot, dplyr`, etc
+-   `tmaptools` pour la carto
+
+Pour faire une carte, il est important de préciser le type de projection dans lequel on veut représenter ça. Il s'agit du système de coordonnée de référencement (CRS).
+
+## Les types de données
+
+Il existe essentiellement deux types de données exploitables pour réaliser une carte:
+
+-   Les vecteurs : Il utilise le concept d'objets géométriques comme les lignes (pour les routes par exemple), les points (pour des lieux par exemple) et les polygones (pour des régions ou quartier par exemple). Il existe sous deux types (le type shapefile et le type GSON).
+
+-   Les rasters : il s'agit des images le plus souvent satellites.
+
+Les données spatiales sont téléchargeables sur des sites comme :
+
+-   <https://www.gadm.org/>
+
+-   <https://geoservices.ign.fr/documentation/diffusion/telechargement-donnees-libres.html>
+
+Pour la réalisation de cartes avec des données de type shapefile, 4 fichiers de données sont essentielles et doivent porter les mêmes noms mais avec des extensions différentes. Ces extensions sont .shp, .dbf, .shx et le .prj
+
+1.  `.shp` : Le fichier .shp est le fichier principal qui stocke les géométries des entités géographiques. Il peut contenir des points, des lignes ou des polygones représentant des objets tels que des points d'intérêt, des routes, des rivières, des frontières, etc. Ce fichier contient les coordonnées géographiques qui définissent la forme et la position des entités.
+
+2.  `.shx` : Le fichier .shx est l'index spatial associé au fichier .shp. Il stocke des informations d'index qui permettent d'accéder rapidement aux entités géographiques dans le fichier .shp. Cela améliore les performances lors de l'affichage ou de l'interrogation des données géographiques.
+
+3.  `.dbf` : Le fichier .dbf est une table attributaire qui contient des informations non spatiales sur les entités géographiques. Il peut inclure des attributs tels que des noms, des descriptions, des valeurs numériques, des catégories, etc., associés à chaque entité géographique. Ce fichier permet d'associer des données tabulaires aux géométries stockées dans le fichier .shp.
+
+4.  `.prj` : Le fichier .prj est un fichier de projection qui spécifie le système de coordonnées utilisé par les données géographiques dans les fichiers .shp. Il indique comment les coordonnées géographiques sont interprétées spatialement. Ce fichier est essentiel pour garantir que les données géographiques sont correctement projetées et alignées avec d'autres couches de données.

@@ -1,0 +1,21 @@
+---
+title: "Python dans R: le package Reticulate"
+---
+
+## Introduction
+
+Nous sommes tous au courant de l'éternel débat qu'il y a entre les R-users et les Python-users. Nous même souvent dans nos projets personnels, on sent la facilité de réaliser certaines taches dans R et d'autres sous Python nous faisant ainsi naviguer entre ces deux logiciels. Cependant ce va-et-vient nous fait perdre du temps. Pour ainsi répondre à ce besoin, Python a été intégré à R dans le logiciel Rstudio offrant la possibilité d'éxécuter des codes R et Python simultanément dans un même fichier de code grâce à un package. Ce package nommé **Reticulate** fera l'objet de notre chapitre.
+
+## Comment marche Reticulate ?
+
+Bien que permettant de réconcilier les deux langages, Reticulate n'est pas le seul moyen d'utiliser Python et R. Il existe d'autre options comme **rPython** ou **PythonInR.** Pour pouvoir utiliser ce package il faut naturellement l'installer. Voic les 3 phases essentielles à l'usage de Reticulate
+
+1.  Phase 1 : installer le package Reticulate sur R
+
+2.  Phase 2 : installer Python : Pour utiliser python dans R il faut s'assurer d'avoir Python installé dans sa machine (versuion \>= 2.7)
+
+3.  Phase 3 : Configurer l'environnement Python (ie spécifier la version
+
+    de Python à utiliser)
+
+Une fois ces étapes définies, il suffira juste d'insérer notre chunk Python sur Rmarkdown et écrire du code Python comme si on était dans Pycharm ou Spyder.

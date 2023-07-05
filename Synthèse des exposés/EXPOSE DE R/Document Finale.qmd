@@ -1,0 +1,315 @@
+---
+title: "Quarto"
+format: html
+editor: visual
+bibliography: references.bib
+---
+
+## INTRODUCTION {#sec-introduction .titre}
+
+Notre objectif dans cette présentation est d'explorer les différentes façons de présenter un document sur Quarto. Un bon environnement qui est très pratique et simple à utiliser contrairement à Rmarkdown qui nous fait écrire des codes et perdre du temps. La chose la plus intéressante sur ce environnement est qu'il offre une interface visuel et source (pour les codes). Nous allons ainsi voir comment produire un bon document avec Quarto, en d'autres termes que doit-on savoir pour produire un bon document Quarto ? La répone dans la suite
+
+## Insertion des titres
+
+Pour insérer un titre dans Quarto il faut juste cliquer sur l'onglet `Normal` et on choisit le niveau de titre que l'on souhaite. On a Header 1 à Header 6 correspondant à Titre de niveau 1 à Titre de niveau 6.
+
+## Titre 2
+
+### Titre 3
+
+#### Titre 4
+
+##### Titre 5
+
+###### Titre 6
+
+Par défaut le texte est sous le format `Normal`
+
+## Style du texte
+
+On peut préciser le style du texte que l'on est entrain d'écrire. Par exemple, si nous voulons que cela soit en gras, en italique, en majuscule, minuscule, sous forme d'indice ou encore d'exposant. Pour ce faire il suffit d'aller dans l'onglet `Format` de notre barre des taches.
+
+Pour les textes en majuscule ou minuscule, barré il faut aller à `Format ⭆ Text`.
+
+## Mise en couleur
+
+Pour les mises en couleur, il faudra une maitrîse du langage CSS. Par exemple supposons que nous voulons metrre le texte suivant: `Je suis content` en bleu, je sélectionne d'abord mon texte , ensuite je vais dans `Format ⟹ Div` et dans l'attribut `CSS Style` je précise mon code pour la couleur. Cependant il peut arriver que je veuilles que seul mon texte `content` soit en bleu. Là je vais la même chose mais au lieu d'insérer une div, j'insère un span.
+
+Comme illustration de ce que je dis :
+
+::: {style="color: blue;"}
+Je suis content
+:::
+
+Je suis [content]{style="color: blue"}
+
+## Bordure de texte
+
+Je peux aussi vouloir encadre mon texte. Il faut dans ce cas aussi, faire appel à des compétences en CSS. Et procéder comme au niveau de la mise en couleur selon que veut que ce soit tout le texte ou juste une pârtie.
+
+::: {style="border: 1px solid red; padding: 10px;"}
+Je suis content
+:::
+
+Je suis [content]{style="border: 1px solid red; padding: 10px;"}
+
+Pour la position du texte (centrée, justifié, à droite ou à gauche la même chose est utilisée avec du code CSS
+
+::: {style="text-align: center;"}
+Centré
+:::
+
+::: {style="text-align; left;"}
+[Aligné à gauche]{style="text-align: left;"}
+:::
+
+::: {style="text-align: right;"}
+Aligné à droite
+:::
+
+## Listes
+
+Pour créer une liste, on peut la faire soit de façon ordonnée ou non. Pour ce faire, on part dans l'onglet `Format ➨ Bullets & Numbering` et on choisit le type selon qu'on veuille oronnée ou non ordonnée.
+
+Par exemple
+
+-   Alex
+
+-   Durel
+
+-   Mohamed
+
+Liste non ordonnée
+
+1.  Alex
+
+2.  Durel
+
+3.  Mohamed
+
+Liste ordonnée
+
+## Insérer une image
+
+Pour insérer une image, nous allons dans le menu `Insérer` et on choisit `Image/Figure`. On ala possibilité de choisir sa taille, sa largeur et aussi son titre.
+
+![Une image](cover.png){fig-align="center"}
+
+Maintenant il peut arriver qu'on veuille insérer deux image l'une à coté de l'autre et non l'une après l'autre. Pour cela, nous devons inérer d'abord une div et préciser dans son attribut other que notre div contient 2 colonnes par `layout-ncol= 2`. En voici un exemple
+
+::: {layout-ncol="2"}
+![](A.png){fig-alt="Erreur"}
+
+![](A.png)
+:::
+
+Supposons qu'on veuille mettre 3 images dont deux en haut et une en bas. Il suffit juste de préciser dans Other ceci: `layout="[[1,1], [1]]"`
+
+::: {layout="[[1,1], [1]]"}
+![](1.jpg){width="1080"}
+
+![](2.jpg){width="1080"}
+
+![](3.jpg){fig-align="center" width="1080"}
+:::
+
+Supposons je veux mettre 4 images 2 en lignes et 2 en colonnes.
+
+::: {layout="[[1,1], [1,1]]"}
+![](1.jpg){width="500"}
+
+![](2.jpg){width="500"}
+
+![](3.jpg){width="500"}
+
+![](4.jpg){width="500"}
+:::
+
+Maintenant si on veut deux images dont l'une est grand et l'autre petite en bas. On précise ceci dans Other `layout="[25,-2,10]" layout-valign="bottom"`
+
+::: {layout="[25,-2,10]" layout-valign="bottom"}
+![](A.png)
+
+![](A.png)
+:::
+
+## Insertion des tableaux
+
+Pour insérer un tableau il suffit d'aller dans le menu `Table` et de cliquer `Insert Table`. Ensuite préciser les dimensions et le titre de ce tableau.
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+: Mon premier tableau
+
+On peut comme les imges mettre aussi plusieurs tableau selon ce qu'on veut. Voici ici deux tableau plaé sur la même ligne.
+
+::: {layout-ncol="2"}
+| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+: Tableau 1
+
+| Col1 | Col2 | Col3 |
+|------|------|------|
+|      |      |      |
+|      |      |      |
+|      |      |      |
+
+: Tableau 2
+:::
+
+Supposons mainteant que l'on veuille commenter le tableau mais que le commentaire se trouve à gauche du tableau. On place alors dans notre précédente div un texte à la place du deuxième tableau
+
+::: {layout-ncol="2"}
+![](A.png)
+
+Le score final du match a été 2-1 en faveur des ISEP3/AS3
+:::
+
+## Insertion des diagrammes
+
+On peut être amené dans notre présentation à insérer un diagramme. Pour cela, nous devons avoir des compétences en Graphviz ou encore Mermaid.
+
+Un exemple ici
+
+```{mermaid}
+flowchart LR
+  A[A] --> B(B)
+  B --> C{C}
+  C --> D[D]
+  C --> E[E]
+  C --> F[F]
+```
+
+```{dot}
+//| label: fig-simple
+//| fig-cap: "Ceci est un diagramme Graphviz"
+graph G {
+  layout=neato
+  courir -- intr;
+  intr -- runbl;
+  runbl -- courir;
+  run -- noyau;
+  noyau -- zombie;
+  noyau -- dormir;
+  noyau -- runmem;
+  dormir -- swap;
+  swap -- runswap;
+  runswap -- nouveau;
+  runswap -- runmem;
+  nouveau -- runmem;
+  dormir -- runmem;
+  
+}
+```
+
+On peut aussi insérer des formes en utilisant du code CSS.
+
+::: {style="background: #2780e3; width: 350px; height: 350px; border-radius: 100px;"}
+:::
+
+## Insérer un graphique
+
+Nous pouvons travailler directement avec notre base de données dans Quarto et essayer de sortir des graphiques à partir des variables de la base. Pour cela nous aurons besoin d'insérer un chunk R . Voici un exemple:
+
+```{r}
+#| echo: false
+#| warning: false
+#| label: fig-mpg
+#| fig-cap: "Quelques graphes"
+#| fig-subcap:
+#|   - "Couleur par nombre de cylindres"
+#|   - "Couleur parn déplacement d'engin"
+#| layout-ncol: 2
+#| column: page
+library(ggplot2)
+options(repr.plot.width = 6)
+ggplot(mpg, aes(x = hwy, y = cty, color = cyl)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c() +
+  theme_minimal()
+
+ggplot(mpg, aes(x = hwy, y = cty, color = displ)) +
+  geom_point(alpha = 0.5, size = 2) +
+  scale_color_viridis_c(option = "E") +
+  theme_minimal()
+```
+
+## Insérer un saut de page
+
+Ce dernier ne peut focntionner qu'avec les documents Word et PDF. Pour ce fairenil faut insérer un shortcode avec `Insert - shotcode` et préciser `page break`
+
+{{< pagebreak >}}
+
+## Insérer un lien
+
+Pour ce faire, il faudra aller dans `Insérer - Link`. Ensuite mettre le lien et préciser le texte à afficher et sur lequel cliquer pour avoir la page. Voici un exemple
+
+[Dashboard Jupyter](https://explainerdashboard.readthedocs.io/en/latest/)
+
+## Insérer une équation
+
+Pour insérer une équation dans Quarto, il faut maitriser les codes LateX. Pour ce faire aller dans `Insert - LaTeX Math`. Ensuite suivant qu'on veut mettre ça sur la ligne de notre texte ou encore en bloc seul, il faut choisir InlineMath ou Display Math. $E=mC^2$
+
+$$
+E=mC^2
+$$ {#eq-lorenz}
+
+## Insérer des symboles ou emoji
+
+On peut insérer les symboles dans Quarto en allant à `Insert - Special Character - Insert Unicode` ou encore `Insert - special character - Insert Emoji`
+
+¢🤣
+
+## Insérer des liens hypertextes {#emoji}
+
+On peut insérer des liens hypertextes vers des équations ou encore vers un tableau, une figure ou encore des titres. Pour ce faire il faudra d'abord préciser dans attributs l'ID du titre, texte ou figure. Ensuite vous allez dans `Insert - Cross reference`.
+
+Aller à @eq-lorenz
+
+Allez à @fig-mpg
+
+Allez à @sec-introduction
+
+## Insérer des notes de bas de pages
+
+Il suffit d'insérer des notes de bas de page juste après le mot concerné. Pour cela cliquez `Insert - Footnote` . Une sorte de nouvelle page apparait en bas avec le numéro du bas de page que vous insérez.
+
+Par exemple. Je m'appelle LABOU [^document-finale-1]Komla Alex.
+
+[^document-finale-1]: Nom d'une tribu au Sud du Togo
+
+## Insérer des notes
+
+Si nous voulons mettre en exergue quelque chose dans un document, nous pouvons le faire en insérant un note (callout) en précisant le type que nous voulons (Important, note...).
+
+::: callout-important
+## Important
+
+Ce texte est très important
+:::
+
+::: callout-warning
+## Attention
+
+Revoyez votre comportement.
+:::
+
+## Insérer des références bibliothèque
+
+Pour insérer une citation tirée d'un document pendant que nous écrivons, nous devons connaitre le DOI de la source. Le DOI est un identifiant que chaque article en ligne a et c'est propre à cet article. Autrement, deux artciles ne peuvent pas avoir le mm DOI.
+
+Pour ce faire une fois que nous avons écrit notre citation, pour la sourcer nous insérons le DOI du fichier dans `Insert - Citation - DOI` et nous ajoutons le DOI du fichier. Automatiquement il insère ce fichier dans notre référence bibligraphique en bas. Ainsi il est important d'insérer un titre référence après le document que nous écrivons.
+
+Par exmple
+
+L'Afrique est un contient très sous développé [@lasida2009].
+
+Voici ce qui met fin à notre document. Nous espérons que vous l'avez apprécié.

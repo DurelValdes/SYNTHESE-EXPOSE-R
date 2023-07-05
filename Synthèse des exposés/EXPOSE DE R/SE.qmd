@@ -1,0 +1,31 @@
+---
+title: "Système d'équation sur R"
+---
+
+Dans la vie, la plupart des systèmes équations auquels nous faisons sont non linéaires. Dans le cas linéairee, les méthodes du pivot de Gauss et autres ont été développées et sont très efficaces. Ici, dans ce chapitre, nous allons aborder les méthodes dans le cas non lineaires.
+
+## Présentation des packages et fonctions
+
+### Package rootSolve
+
+Le package "rootSolve" est une bibliothèque de fonctions disponible dans le logiciel R qui fournit des outils pour la résolution numérique de systèmes d'équations non linéaires.
+
+### Fonction multiroot()
+
+Cette fonction est utilisée pour résoudre des systèmes d'équations non linéaires multivariées. Elle prend en entrée un vecteur de fonctions d'équation multivariée, ainsi qu'un vecteur initial de valeurs approchées pour les variables, et retourne une approximation des valeurs des variables qui satisfont le système d'équations. l'algorithme a été implémenté avec la méthode de Newton-Raphson.
+
+## Le package nleqslv
+
+Le package "nleqslv" est une bibliothèque de fonctions disponible dans le logiciel R qui permet de résoudre des systèmes d'équations non linéaires multivariées. Il offre des fonctionnalités avancées pour trouver les solutions numériques de ces systèmes en utilisant des méthodes itératives basées sur la méthode de Newton et de broyden(méthode par défaut).
+
+### Fonction nleqslv()
+
+Cette fonction est le cœur du package. Elle permet de résoudre numériquement des systèmes d'équations non linéaires multivariées en utilisant les méthode de Newton et de Broyden . Elle prend en entrée une fonction d'équation multivariée, un vecteur initial de valeurs approchées pour les variables, et retourne une approximation des valeurs des variables qui satisfont le système d'équations.
+
+## Le package pracma
+
+Le package "pracma" aussi propose des méthodes numériques pour résoudre des équations non linéaires. Par exemple, les fonctions fsolve() et broyden() en utilisant la méthode de Newton ou la méthode de Broyden, respectivement.
+
+## Les méthodes indirectes
+
+On peut aussi résoudre un système d'équations non linéaires à l'aide d'un problème d'optimisation . Cela peut se faire on Transforme le système d'équations en un problème d'optimisation en définissant une fonction objectif à minimiser ou à maximiser. Cette fonction objectif est généralement construite en utilisant une mesure de l'écart entre les valeurs réelles des équations et les valeurs calculées à partir des variables inconnues. On Choisit ensuite une méthode d'optimisation : Il existe plusieurs méthodes d'optimisation disponibles pour résoudre le problème. Certaines des méthodes couramment utilisées incluent **la méthode de Newton**, **la** **méthode du gradient, la méthode de recherche linéaire, la méthode de Gauss-Newton, etc**. Sous R, propose pour cela les fonctions comme `optim ()` dans le package stats , `optimx()` dans le package `optimx.`

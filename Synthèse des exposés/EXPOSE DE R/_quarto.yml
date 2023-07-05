@@ -1,0 +1,34 @@
+project:
+  type: book
+
+book:
+  title: "RESUME DES EXPOSES DE R"
+  author: "Groupe 4: Alex - Durel- Moustapha"
+  date: "04/07/2023"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - Janit.qmd
+    - GtSum.qmd
+    - Rmarkdown.qmd
+    - Document Finale.qmd
+    - RVE.qmd
+    - tm.qmd
+    - CP.qmd
+    - SE.qmd
+    - Ret.qmd
+    - Carto.qmd
+    - Shin.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

@@ -1,0 +1,35 @@
+---
+title: "Text Mining sur R"
+---
+
+## Introduction
+
+Etant statisticien, nous connaissons l'importance des enquêtes. Généralement dans les enquêtes, nous avons des questions ouvertes et des questions fermées. Le traitement des questions fermées est chose aisée, nous avons plusieurs méthodes. Par contre avec les questions ouvertes, cela devient un peu délicat. Toutes les techniques de statistiques univariées et bivariées ne servent pas. C'est là qu'intervient le text mining, qui nous permet d'analyser des données textuelles. Sur R, il nécessite quelques packages essentiels à savoir **tidytext, dplyr** et **tm.**
+
+## Les étapes du text mining
+
+Le text mining suit quelques étapes à respecter:
+
+-   **Prétraitement du texte**: en vue de rendre nos données exploitables, il est important de les traiter d'abord. Cela passe par la tokenisation (découper chaque texte en mots) ou encore d'autres méthodes allant à la suppression des mots inutiles pour notre analyse.
+
+-   **Le cloud**: le nuage de mots, il permet de voir les mots les plus utilisés et les groupes de mots les plus utilisés suivant que l'on a formé des ngrammes (combinaisons de n mots).
+
+-   **Le réseau de mots**: permet de voir parmi les mots les plus utilisés, les combinaisons les plus utilisés.
+
+-   **Creation d'une variable**: le but du text mining est en quelque sorte cela. L'objectif est d'arriver à créer une variable à partir des mots ou combinaisons de mots les plus utilisés, qui prend 1 si l'individu a utilisé cela et 0 sinon.
+
+## Quelques fonctions à connaitre
+
+Certaines fonctions sont à connaître pour faire du text mining.
+
+-   **`tm_map()`**: Cette fonction permet d'appliquer une transformation à chaque document d'un corpus textuel. Dans vos exemples, différentes transformations sont appliquées à **`txte1`**.
+
+-   **`removePunctuation()`**: Cette fonction permet de supprimer la ponctuation des documents textuels.
+
+-   **`removeNumbers()`**: Cette fonction permet de supprimer les chiffres des documents textuels.
+
+-   **`removeWords()`**: Cette fonction permet de supprimer des mots spécifiques des documents textuels. Dans votre exemple, les mots vides (stopwords) en anglais sont supprimés à l'aide de la fonction **`stopwords("english")`**.
+
+-   **`stripWhitespace()`**: Cette fonction permet de supprimer les espaces supplémentaires dans les documents textuels.
+
+-   **`tm_reduce()`**: Cette fonction permet de réduire le corpus en supprimant les termes rares ou très fréquents.

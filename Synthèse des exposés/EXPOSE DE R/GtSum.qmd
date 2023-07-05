@@ -1,0 +1,31 @@
+# GtSummary
+
+## Présentation du package
+
+Le package gtsummary est un package spécialisé dans la confection de tableaux bien stylés. Le plus souvent, lorsqu'on sort un tableau sur Rmarkdown, son format n'est pas vraiment joli. Pour répondre à ce besoin, le package ci a été développé. Il permet de réaliser des tableaux avec la combinaison de plusieurs variables, des tableaux de résumés statistiques ou encore la regression. Comme tout package, avant d'être utilisé, gtsummary a besoin d'être installé avec la commande usuelle que l'on connait (install.package("gtsummary"). Il est également important de télécharger la version de développement depuis github (remotes::install_github("ddsjoberg/gtsummary")).
+
+## Différences avec d'autres packages
+
+Il y a 3 packages essentiels desquels diffère `gtsummary`.
+
+-   `Janitor` que l'on a déjà vu et qui est spécialisé dans ce que l'on peut appeler le preprocessing. Il sert à nettoyer notre base de données et certaines variables en vue de les rendre prête à être utilisées.
+
+-   Stargazer est principalement utilisé pour créer des tableaux de regressions et de statistiques descriptives à partir des modèles alors que gtsummary se concentre sur la réalisation de résumés statistiques complets incluant des mesures descriptives, des tests statistiques et des graphiques.
+
+## Quelques fonctions essentielles
+
+-   *tbl_summary()*: elle permet de faire une table de résumé pour toute la base. Cela consiste à sortir pour chaue variable les résumés en terme de fréquence d'apparition de chaque modalité (pour des variables catégorielles) ou encore médiane, moyenne et autres pour des variables continues. Par ailleurs, suivant les types de variables dont on veut sortir le résumé, des fonctions sont adaptées. Par exemple respectivement `binary %>% tbl_summary()` , `multicoto %>% tbl_summary()` et `continu %>% tbl_summary()` pour des variables **binaires**, **multichotomiques** et **continues.**
+
+-   *tbl_cross()*: pour des tableaux croisés
+
+-   *tbl_regress()*: pour sortir les tableaux issus d'une regression.
+
+-   *tbl_stack():* permet de coller deux (ou plus) tableaux l'un au-dessus de l'autre
+
+-   *tbl_merge()*: les placera côte-à-côte, en s'assurant qu'une même variable sera bien affichée sur la même ligne.
+
+-   *tbl_spit()*: permet de découper un tableau qui est trop long en précisant les variables suivant lesquelles on découpe.
+
+Il est également possible de spécifier le format d'affichage du tableau en utilisant des thèmes avec la fonction *theme_gtsummary\*()*. Nous avons par exemple la fonction *theme_gtsummary_journal()* qui adopte le format standard de certaines grandes revues scientifiques. Nous pouvons aussi nous même définir un thème à appliquer à nos tableaux sous forme de fonction. La possibilité nous est donné de modifier les styles d'affichages (en gras, italique, textes présents dans les tableaux.
+
+Voilà un peu ce qui met fin à ce chapitre. Il faudra retenir que gtsummary est un package de sortie de tableaux.

@@ -1,0 +1,35 @@
+---
+title: "R vers Excel"
+---
+
+## Introduction
+
+De nombres fois, nous avons été confronté au problème d'exportation de tableaux réalisés sur R vers Excel. Il fallait copier nous même et ensuite coller et généralement la forme du tableau n'est pas maintenue. Pour pallier ce problème, le package R vers Excel `(R2Excel)` a été développée.
+
+## Présentation du package R2Excel
+
+Le package R2Excel est une bibliothèque R qui permet d'exporter des données et des résultats d'analyses depuis R vers Microsoft Excel. Il fournit des fonctions pratiques pour créer des feuilles de calcul Excel, y écrire des données, formater les cellules, ajouter des graphiques et d'autres éléments visuels.
+
+Son principal objectif est de faciliter le transfert de données et de résultats d'analyses entre R et Excel, en offrant une solution pratique pour les utilisateurs qui souhaitent exploiter les fonctionnalités d'Excel pour présenter, partager ou analyser leurs données.
+
+## Principales fonctions
+
+Voici quelques fonctions utiles et servant à faciliter le passage de R vers Excel
+
+1.  `createWorkbook()` : Cette fonction permet de créer un nouveau classeur Excel. Elle renvoie un objet workbook qui représente le classeur.
+
+2.  `createSheet()` : Cette fonction permet de créer une nouvelle feuille de calcul Excel à l'intérieur d'un classeur. Elle renvoie un objet sheet qui représente la feuille.
+
+3.  `writeData()` : Cette fonction permet d'écrire des données dans une feuille de calcul Excel. Vous pouvez spécifier la plage de cellules où écrire les données et formater les cellules selon vos besoins.
+
+4.  `addChart()` : Cette fonction permet d'ajouter un graphique à une feuille de calcul Excel. Vous pouvez spécifier les données à utiliser, le type de graphique (barres, lignes, etc.) et personnaliser les options de présentation.
+
+5.  `setCellStyle()` : Cette fonction permet de définir le style des cellules dans une feuille de calcul Excel. Vous pouvez spécifier la police, la couleur de fond, les bordures et d'autres attributs de mise en forme.
+
+6.  `saveWorkbook()` : Cette fonction permet de sauvegarder le classeur Excel sur le disque.
+
+Ces fonctions, ainsi que d'autres fournies par le package R2Excel, permettent aux utilisateurs de manipuler facilement les données et les résultats d'analyses dans Excel, en utilisant les fonctionnalités avancées d'Excel pour créer des rapports, des tableaux de bord interactifs, des présentations visuelles, etc.
+
+## Conclusion
+
+En résumé, le package R2Excel facilite l'exportation de données et de résultats d'analyses depuis R vers Excel, en offrant des fonctions pratiques pour créer, écrire et formater des feuilles de calcul Excel, ainsi que pour ajouter des graphiques et d'autres éléments visuels.

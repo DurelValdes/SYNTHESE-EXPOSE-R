@@ -1,0 +1,77 @@
+---
+title: "Calcul Parallèle"
+---
+
+## Introduction
+
+De manière générale la plupart des traitements que nous faisons suivent le principe du calcul séquentiel ou une tâche doit être exécuté avant que les autres ne soient déclenchés et ainsi de suite. Face à des petites bases de données, le temps pour effectuer ces opérations nous semble court. Cependant, avec de grandes bases de données, il est facile de remarquer la lenteur de l'ordinateur à exécuter les tâches que nous lui demandons. Le calcul séquentiel est ainsi limité. Pour pallier ces problèmes et rendre le calcul moins lent, il est impératif d'utiliser le calcul en parallèle dont l'objectif est de découper la grande tâche en des sous tâches indépendantes et ensuite associer le résultat de chaque sous tâche pour sortir le résultat final.
+
+## Principes généraux
+
+1\. Briser un calcul informatique en blocs de calcul indépendants;
+
+2\. Exécuter simultanément (en parallèle) les blocs de calcul sur plusieurs unités de calcul;
+
+3\. Rassembler les résultats et les retourner.
+
+**Paralléliser** un problème consiste à décomposer ce problème en plusieurs sous problèmes à résoudre simultanément à travers différentes ressources, pour ressortir la solution du problème initial, dans un délai optimal.Ainsi, le principe du calcul parallèle est d'effectuer simultanément une même tâche ou exécuter un même programme de manière parallèle. Cela est aussi possible à travers différentes machines connectées par un réseau où chacun d'eux reçoit une tache à exécuter. Sur R, L'utilité du calcul en parallèle réside dans le faite qu'il permet d'effectuer plus rapidement et de manière asynchrone l'exécution de programme sur des bases de données volumineuses en exploitant simultanément plusieurs unités de calcul d'un ordinateur appelées cœurs
+
+## Etapes du calcul en parallèle
+
+1\. Démarrer m processus "travailleurs" (i.e.cœurs de calcul) et les initialiser;
+
+2\. Envoyer les fonctions et données nécessaires pour chaque tache aux travailleurs;
+
+3\. Séparer les taches en m opérations d'envergure similaire et les envoyer aux travailleurs;
+
+4\. Attendre que tous les travailleurs aient terminer leurs calculs et obtenir leurs résultats;
+
+5\. Rassembler les résultats des différents travailleurs;
+
+6\. Arrêter les processus travailleurs
+
+## Calcul en parallèle avec R
+
+R dispose de packages spécialisés dans le calcul en parallèle. Il s'agit de:
+
+-   Package Parallel: inclus dans la distribution de base de R: Il se base sur l'utilisation de fonctions de la
+
+famille des apply
+
+-   Package doParallel et Foreach:
+
+-   Le package rmr2 (MapReduce)
+
+-   Etc.
+
+## Quelques fonctions
+
+Detectcores(): permet de détecter le nombre cœurs de la machine.
+
+-- Makecluster() :
+
+-- Stopcluster(): est utilisé pour arrêter et libérer les différents workers.
+
+-- La famille des fonctions Applay, adaptées au calcul parallèle sous R permet d'exécuter simultané-
+
+ment les opérations sur les différents blocs.
+
+-   parApply() permet d'effectuer des calculs en parallèle sur une matrice ou un tableau
+
+en utilisant un cluster de travailleurs
+
+-   parLapply() permet d'appliquer une fonction à chaque élément d'une liste en utilisant un
+
+cluster de travailleurs pour exécuter les calculs en parallèle.
+
+-   parSapply() permet d'appliquer une fonction de manière parallèle à des éléments d'une
+
+liste. Elle prend en argument le jeu de donné et la fonction et retourne un vecteur ou une
+
+matrice.
+
+-- clusterEvalQ(): Elle est utilisée pour évaluer une expression sur tous les nœuds d'un cluster
+
+parallèle. Elle est utile lorsque vous avez besoin d'exécuter une expression ou de charger des
+
+bibliothèques spécifiques sur chaque nœud du cluster avant d'exécuter des tâches parallèles.
